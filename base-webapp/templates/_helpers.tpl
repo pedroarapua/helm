@@ -21,6 +21,12 @@ helm.sh/chart: {{ include "base-webapp.chart" . }}
 {{- if .Values.image.tag }}
 app.kubernetes.io/version: {{ .Values.image.tag | quote }}
 {{- end }}
+{{- if .Values.tribe }}
+app.kubernetes.io/tribe: {{ .Values.tribe | quote }}
+{{- end }}
+{{- if .Values.squad }}
+app.kubernetes.io/squad: {{ .Values.squad | quote }}
+{{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
@@ -30,6 +36,4 @@ Selector labels
 {{- define "base-webapp.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "base-webapp.name" . }}
 app.kubernetes.io/instance: {{ include "base-webapp.name" . }}
-app.kubernetes.io/tribe: {{ .Values.tribe | quote }}
-app.kubernetes.io/squad: {{ .Values.squad | quote }}
 {{- end }}
