@@ -1,8 +1,0 @@
-apiVersion: v2
-name: webapp
-type: application
-version: 'v1.0.0'
-dependencies:
-- name: base-webapp
-  version: "0.1.0"
-  repository: "file://../base-webapp"
