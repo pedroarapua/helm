@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "base-webapp.selectorLabels" . | nindent 8 }}
+        {{- include "base-webapp.labels" . | nindent 8 }}
     spec:
       containers:
         - name: {{ include "base-webapp.name" . }}
