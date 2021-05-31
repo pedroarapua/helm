@@ -9,7 +9,7 @@ base-webapp:
     repository: pedroarapua/nodejs-web-app
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "980932e"
+    tag: "latest"
 
   service:
     type: NodePort
