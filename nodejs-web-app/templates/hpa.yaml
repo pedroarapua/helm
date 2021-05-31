@@ -2,7 +2,6 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  namespace: {{ include "nodejs-web-app.fullname" . }}
   name: {{ include "nodejs-web-app.fullname" . }}
   labels:
     {{- include "nodejs-web-app.labels" . | nindent 4 }}

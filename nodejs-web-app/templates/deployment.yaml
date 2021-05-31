@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: {{ include "nodejs-web-app.fullname" . }} 
   name: {{ include "nodejs-web-app.fullname" . }}
   labels:
     {{- include "nodejs-web-app.labels" . | nindent 4 }}
