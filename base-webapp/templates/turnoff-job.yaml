@@ -1,0 +1,20 @@
+{{- if .Values.turnoffJob.enabled }}
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: {{ include "base-webapp.name" . }}
+  labels:
+    {{- include "base-webapp.labels" . | nindent 4 }}
+spec:
+  #minReplicaCount: 1
+  #maxReplicaCount: 10
+  scaleTargetRef:
+    name: {{ include "base-webapp.name" . }}
+  triggers:
+    - type: cron
+      metadata:
+        timezone: {{ .Values.turnoffJob.timeZone | default "America/Sao_Paulo" | quote }}
+        start: {{ .Values.turnoffJob.start }}
+        end: {{ .Values.turnoffJob.end }}
+        desiredReplicas: "0"
+{{- end }}

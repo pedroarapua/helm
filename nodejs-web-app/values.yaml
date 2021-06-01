@@ -33,3 +33,9 @@ base-webapp:
     maxReplicas: 20
     targetCPUUtilizationPercentage: 70
     # targetMemoryUtilizationPercentage: 80
+  
+  turnoffJob:
+    enabled: true
+    timezone: America/Sao_Paulo
+    start: 20 13 * * *
+    end: 03 13 * * *

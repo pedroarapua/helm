@@ -36,3 +36,9 @@ autoscaling:
   maxReplicas: 2
   targetCPUUtilizationPercentage: 70
   # targetMemoryUtilizationPercentage: 80
+
+turnoffJob:
+  enabled: false
+  #timezone: America/Sao_Paulo  # The acceptable values would be a value from the IANA Time Zone Database.
+  #start: 30 * * * *            # Every hour on the 30th minute
+  #end: 45 * * * *              # Every hour on the 45th minute
